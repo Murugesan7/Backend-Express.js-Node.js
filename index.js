@@ -26,9 +26,9 @@ app.delete("/users/:id",(req,res) => {
 const id = Number(req.params.id);
 const filteredUsers = users.filter((user) => user.id !==id);
 fs.writeFile("./sample.json",JSON.stringify(filteredUsers),(err,data) => {
-   // return res.json(filteredUsers);
-   return res.json(`Id No : ${id} Deleted Successfully`);
+    
 });
+return res.json(filteredUsers);
 });
 
 // Add User Data
